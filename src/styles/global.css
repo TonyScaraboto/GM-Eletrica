@@ -23,7 +23,9 @@ html {
 
 body {
     margin: 0;
+    min-height: 100vh;
     background: linear-gradient(180deg, rgba(6, 6, 7, 0.92) 0%, rgba(5, 5, 5, 0.98) 100%);
+    background-attachment: fixed;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
@@ -927,7 +929,7 @@ body.is-menu-open {
     gap: 1rem;
     align-items: flex-start;
     padding: 1.35rem;
-    background: linear-gradient(155deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.75));
+    background: linear-gradient(155deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.85));
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 18px;
     backdrop-filter: blur(10px);
@@ -1319,6 +1321,20 @@ footer {
 }
 
 @media (max-width: 640px) {
+    html {
+        background:
+            radial-gradient(circle at 10% 0%, rgba(255, 212, 0, 0.12) 0%, rgba(255, 212, 0, 0) 40%),
+            linear-gradient(165deg, #060607 0%, #0f0f13 55%, #121720 100%);
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
+    body {
+        background: linear-gradient(180deg, rgba(6, 6, 7, 0.95) 0%, rgba(5, 5, 5, 0.99) 100%);
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
     .container {
         width: min(1120px, 90vw);
     }
@@ -1368,6 +1384,8 @@ footer {
 
     .hero__highlights li {
         padding: 1.15rem 1.3rem;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.85));
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .hero__highlights strong {
@@ -1387,6 +1405,8 @@ footer {
     .hero__meta li {
         text-align: center;
         padding: 1.15rem 1.3rem;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.85));
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .hero__meta strong {
@@ -1485,14 +1505,8 @@ footer {
     .segmento-card {
         padding: 1.65rem 1.5rem;
         border-radius: 20px;
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.85));
-        border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .hero__highlights li,
-    .hero__meta li {
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.8));
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.88));
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .card h3,
