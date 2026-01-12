@@ -1137,20 +1137,23 @@ footer {
         height: 100vh;
         width: min(320px, 84vw);
         padding: clamp(1.8rem, 6vw, 2.4rem);
-        background: rgba(6, 6, 7, 0.96);
-        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(6, 6, 7, 0.98);
+        border-left: none;
         box-shadow: none;
         flex-direction: column;
         align-items: flex-start;
         gap: 1.5rem;
         overflow-y: auto;
+        overflow-x: hidden;
         scrollbar-width: thin;
         scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
         visibility: hidden;
         opacity: 0;
-        transition: right 0.32s ease, visibility 0s 0.32s, opacity 0.32s ease, box-shadow 0.32s ease;
+        transform: translateX(100%);
+        transition: right 0.32s ease, visibility 0s 0.32s, opacity 0.32s ease, transform 0.32s ease, box-shadow 0.32s ease;
         z-index: 120;
         pointer-events: none;
+        will-change: transform;
     }
 
     .menu::-webkit-scrollbar {
@@ -1170,9 +1173,11 @@ footer {
         right: 0;
         visibility: visible;
         opacity: 1;
-        transition: right 0.32s ease, visibility 0s 0s, opacity 0.32s ease, box-shadow 0.32s ease;
+        transform: translateX(0);
+        transition: right 0.32s ease, visibility 0s 0s, opacity 0.32s ease, transform 0.32s ease, box-shadow 0.32s ease;
         pointer-events: auto;
         box-shadow: -24px 0 50px rgba(0, 0, 0, 0.45);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .menu__header {
@@ -1384,6 +1389,8 @@ footer {
 
     .servico-card {
         border-radius: 20px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.85));
+        border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .servico-card__body {
@@ -1451,6 +1458,14 @@ footer {
     .segmento-card {
         padding: 1.65rem 1.5rem;
         border-radius: 20px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.85));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero__highlights li,
+    .hero__meta li {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.8));
+        border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .card h3,
