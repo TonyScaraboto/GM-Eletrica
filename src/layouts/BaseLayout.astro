@@ -1,0 +1,201 @@
+---
+import "../styles/global.css";
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "GM Elétrica", description = "Instalação e manutenção elétrica executadas com segurança e conformidade técnica." } = Astro.props as Props;
+
+const navItems: NavItem[] = [
+  { label: "Início", href: "/" },
+  { label: "Serviços", href: "/servicos" },
+  { label: "Processo", href: "/processo" },
+  { label: "Segmentos", href: "/diferenciais" }
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const ano = new Date().getFullYear();
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <slot name="head" />
+  </head>
+  <body>
+    <header class="top-bar" id="topo">
+      <div class="container">
+        <nav class="nav">
+          <a class="brand" href="/" aria-label="GM Elétrica - início">
+            <img class="brand__logo" src="/images/logo-gm.png" alt="Logotipo GM Elétrica" loading="lazy" />
+            <span class="brand__name">GM Elétrica</span>
+          </a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="menu">
+            <span class="sr-only">Abrir menu lateral</span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="menu" id="menu" aria-expanded="false">
+            {navItems.map(({ label, href }) => {
+              const normalizedHref = href === "/" ? "/" : href.replace(/\/$/, "");
+              const isCurrent = currentPath === normalizedHref;
+
+              return (
+                <li>
+                  <a href={href} aria-current={isCurrent ? "page" : undefined}>{label}</a>
+                </li>
+              );
+            })}
+            <li class="menu__cta">
+              <a class="nav-cta" href="/contato">Contato rápido</a>
+            </li>
+          </ul>
+          <a class="nav-cta" href="/contato">Contato rápido</a>
+        </nav>
+        <div class="menu-backdrop" aria-hidden="true"></div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="container footer__grid">
+        <div>
+          <strong>GM Elétrica</strong>
+          <p>Instalações e manutenções elétricas para portões automáticos, ventiladores e projetos completos com foco em segurança e design.</p>
+        </div>
+        <div>
+          <p>&copy; {ano} GM Elétrica. Todos os direitos reservados.</p>
+          <a class="footer__link" href="#topo">Voltar ao topo</a>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      class="whatsapp-fab"
+      href="https://wa.me/5513996999930"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Conversar no WhatsApp com a GM Elétrica"
+    >
+      <svg
+        class="whatsapp-fab__icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 32 32"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          d="M16 3A12.94 12.94 0 0 0 3 16a12.77 12.77 0 0 0 1.83 6.63L3 29l6.56-1.77A13 13 0 1 0 16 3Zm0 2.06a10.94 10.94 0 0 1 8.81 17.57l-.38.47.81 3.06-3.13-.82-.45.27A10.94 10.94 0 0 1 5.07 16 10.93 10.93 0 0 1 16 5.06Zm-5.67 4.36h-.43a.9.9 0 0 0-.64.31 4.91 4.91 0 0 0-1.57 3.64 8.52 8.52 0 0 0 2.68 4.67 12.73 12.73 0 0 0 5.46 3 5.39 5.39 0 0 0 2 .36 4.61 4.61 0 0 0 2.18-.61 2 2 0 0 0 1-1.61 1.73 1.73 0 0 0-.2-.93 7.78 7.78 0 0 0-.78-1.21 1.72 1.72 0 0 0-2.33-.38l-.83.53a.62.62 0 0 1-.72 0 10.63 10.63 0 0 1-1.81-1.12 7.69 7.69 0 0 1-1.88-2.28.55.55 0 0 1 .09-.67c.18-.21.38-.42.57-.62.19-.2.3-.45.45-.67a1.36 1.36 0 0 0 0-1.45c-.24-.45-.5-.9-.78-1.34a1.8 1.8 0 0 0-1.38-1Z"
+        />
+      </svg>
+    </a>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.querySelector('.nav-toggle');
+        const menu = document.getElementById('menu');
+        const backdrop = document.querySelector('.menu-backdrop');
+
+        if (!navToggle || !menu) {
+          return;
+        }
+
+        const setMenuState = (isOpen) => {
+          navToggle.setAttribute('aria-expanded', String(isOpen));
+          menu.setAttribute('aria-expanded', String(isOpen));
+          document.body.classList.toggle('is-menu-open', isOpen);
+          if (backdrop) {
+            backdrop.classList.toggle('is-active', isOpen);
+          }
+        };
+
+        navToggle.addEventListener('click', () => {
+          const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+          setMenuState(!isExpanded);
+        });
+
+        menu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => setMenuState(false));
+        });
+
+        if (backdrop) {
+          backdrop.addEventListener('click', () => setMenuState(false));
+        }
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+            setMenuState(false);
+          }
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 960) {
+            setMenuState(false);
+          }
+        });
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion) {
+          const overlay = document.createElement('div');
+          overlay.className = 'page-transition';
+          document.body.appendChild(overlay);
+
+          requestAnimationFrame(() => {
+            overlay.classList.add('is-idle');
+          });
+
+          const handleInternalNavigation = (event) => {
+            const anchor = event.currentTarget;
+
+            if (
+              anchor.target && anchor.target !== '_self' ||
+              anchor.hasAttribute('download') ||
+              event.metaKey ||
+              event.ctrlKey ||
+              event.shiftKey ||
+              event.altKey
+            ) {
+              return;
+            }
+
+            const url = new URL(anchor.href, window.location.href);
+            if (url.pathname === window.location.pathname && url.hash) {
+              return;
+            }
+
+            event.preventDefault();
+            overlay.classList.remove('is-idle');
+
+            window.setTimeout(() => {
+              window.location.href = anchor.href;
+            }, 280);
+          };
+
+          document.querySelectorAll('a[href^="/"]').forEach((anchor) => {
+            anchor.addEventListener('click', handleInternalNavigation);
+          });
+
+          window.addEventListener('pageshow', () => {
+            overlay.classList.add('is-idle');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
