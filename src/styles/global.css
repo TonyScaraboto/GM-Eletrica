@@ -615,9 +615,9 @@ body.is-menu-open {
 }
 
 .institucional {
-    background: radial-gradient(circle at 15% 20%, rgba(255, 212, 0, 0.15), transparent 60%),
-        linear-gradient(160deg, rgba(8, 8, 8, 0.9) 0%, rgba(8, 8, 8, 0.72) 100%);
-    border-block: 1px solid rgba(255, 255, 255, 0.04);
+    background: transparent;
+    padding: clamp(3.5rem, 6vw, 5rem) 0;
+    border-block: none;
 }
 
 .institucional__grid {
@@ -643,11 +643,12 @@ body.is-menu-open {
 }
 
 .institucional__points li {
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.75));
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 14px;
     padding: 0.9rem 1.1rem;
     color: var(--muted);
+    min-height: 100%;
 }
 
 .institucional__points strong {
@@ -669,10 +670,13 @@ body.is-menu-open {
 }
 
 .credential-card {
-    background: rgba(0, 0, 0, 0.55);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.85));
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 22px;
     padding: 1.75rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     box-shadow:
         0 24px 44px rgba(5, 5, 5, 0.45),
         0 0 18px rgba(255, 212, 0, 0.18);
@@ -825,8 +829,8 @@ body.is-menu-open {
 }
 
 .processo-preview {
-    background: rgba(0, 0, 0, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.85));
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 36px;
     margin: 0 1.5rem;
     padding: 5rem 0;
@@ -980,8 +984,8 @@ body.is-menu-open {
 }
 
 .contact-note {
-    background: var(--surface);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 18px;
     margin-top: 2rem;
     padding: 1.5rem;
@@ -992,8 +996,8 @@ body.is-menu-open {
 }
 
 .contato__form {
-    background: var(--surface);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.85));
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 22px;
     display: grid;
     gap: 1rem;
@@ -1442,6 +1446,9 @@ footer {
     .processo-preview {
         padding: 3rem 1.25rem;
         border-radius: 28px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.88));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        margin: 0;
     }
 
     .processo-preview__steps {
@@ -1465,6 +1472,12 @@ footer {
     .institucional,
     .cta-banner {
         padding: 3rem 0;
+    }
+
+    .institucional__points li {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.85));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1rem 1.15rem;
     }
 
     .card,
@@ -1497,6 +1510,8 @@ footer {
     .contato__form {
         padding: 1.75rem 1.5rem;
         border-radius: 20px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.88));
+        border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .contato__form label {
