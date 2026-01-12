@@ -1383,8 +1383,8 @@ footer {
 
     .hero::after {
         opacity: 0.8;
-        inset: -20% -5% 10% -10%;
-        background: radial-gradient(circle at 30% 30%, rgba(255, 212, 0, 0.22), transparent 65%);
+        inset: -30% -10% -15% -15%;
+        background: radial-gradient(ellipse at 35% 25%, rgba(255, 212, 0, 0.22), transparent 70%);
     }
 
     .hero h1 {
