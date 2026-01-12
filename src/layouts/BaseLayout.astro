@@ -49,6 +49,10 @@ const ano = new Date().getFullYear();
             <span></span>
           </button>
           <ul class="menu" id="menu" aria-expanded="false">
+            <li class="menu__header">
+              <span>Navegação</span>
+              <button class="menu__close" type="button" aria-label="Fechar menu">&times;</button>
+            </li>
             {navItems.map(({ label, href }) => {
               const normalizedHref = href === "/" ? "/" : href.replace(/\/$/, "");
               const isCurrent = currentPath === normalizedHref;
@@ -111,6 +115,7 @@ const ano = new Date().getFullYear();
         const navToggle = document.querySelector('.nav-toggle');
         const menu = document.getElementById('menu');
         const backdrop = document.querySelector('.menu-backdrop');
+        const closeButton = document.querySelector('.menu__close');
 
         if (!navToggle || !menu) {
           return;
@@ -136,6 +141,10 @@ const ano = new Date().getFullYear();
 
         if (backdrop) {
           backdrop.addEventListener('click', () => setMenuState(false));
+        }
+
+        if (closeButton) {
+          closeButton.addEventListener('click', () => setMenuState(false));
         }
 
         document.addEventListener('keydown', (event) => {
