@@ -1146,7 +1146,7 @@ footer {
         overflow-y: auto;
         scrollbar-width: thin;
         scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
-        transform: translateX(100%);
+        transform: translateX(calc(100% + 24px));
         transition: transform 0.32s ease;
         z-index: 120;
         pointer-events: none;
@@ -1185,23 +1185,30 @@ footer {
     }
 
     .menu__close {
-        border: none;
+        border: 1px solid rgba(255, 255, 255, 0.1);
         background: rgba(0, 0, 0, 0.35);
         color: var(--text);
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        font-size: 1.35rem;
-        line-height: 1;
+        padding: 0.55rem 1rem;
+        border-radius: 999px;
         cursor: pointer;
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        transition: background 0.2s ease, box-shadow 0.2s ease;
+        gap: 0.55rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .menu__close span[aria-hidden="true"] {
+        font-size: 1.25rem;
+        line-height: 1;
     }
 
     .menu__close:hover {
-        background: rgba(255, 212, 0, 0.25);
+        background: rgba(255, 212, 0, 0.18);
+        border-color: rgba(255, 212, 0, 0.35);
         box-shadow: 0 0 14px rgba(255, 212, 0, 0.35);
     }
 

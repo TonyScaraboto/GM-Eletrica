@@ -51,7 +51,10 @@ const ano = new Date().getFullYear();
           <ul class="menu" id="menu" aria-expanded="false">
             <li class="menu__header">
               <span>Navegação</span>
-              <button class="menu__close" type="button" aria-label="Fechar menu">&times;</button>
+              <button class="menu__close" type="button" aria-label="Fechar menu">
+                <span aria-hidden="true">←</span>
+                <span>Voltar</span>
+              </button>
             </li>
             {navItems.map(({ label, href }) => {
               const normalizedHref = href === "/" ? "/" : href.replace(/\/$/, "");
