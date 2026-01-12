@@ -254,15 +254,15 @@ body.is-menu-open {
 
 .nav-toggle {
     display: none;
-    background: none;
+    background: transparent;
     border: none;
     cursor: pointer;
     align-items: center;
     flex-direction: column;
     gap: 0.35rem;
-    padding: 0.4rem;
-    border-radius: 999px;
-    transition: background 0.25s ease, box-shadow 0.25s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.2s ease;
 }
 
 .nav-toggle span {
@@ -270,19 +270,18 @@ body.is-menu-open {
     height: 6px;
     background: var(--text);
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 212, 0, 0.2);
-    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 0 8px rgba(255, 212, 0, 0.2);
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .nav-toggle[aria-expanded="true"] {
-    background: rgba(0, 0, 0, 0.28);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+    background: transparent;
 }
 
 .nav-toggle[aria-expanded="true"] span {
     background: var(--primary);
-    box-shadow: 0 0 12px rgba(255, 212, 0, 0.55);
-    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(255, 212, 0, 0.5);
+    transform: scale(1.15);
 }
 
 .page-hero {
@@ -946,7 +945,7 @@ body.is-menu-open {
 }
 
 .cta-banner {
-    background: rgba(0, 0, 0, 0.65);
+    background: transparent;
     margin: clamp(2rem, 6vw, 4rem) 0 clamp(4rem, 8vw, 5rem);
     padding: clamp(3rem, 7vw, 4rem) 0;
 }
@@ -958,8 +957,8 @@ body.is-menu-open {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     padding: 3rem 2rem;
     border-radius: 24px;
-    background: linear-gradient(120deg, rgba(255, 212, 0, 0.18), rgba(0, 0, 0, 0.85));
-    border: 1px solid rgba(255, 212, 0, 0.2);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.85));
+    border: 1px solid rgba(255, 212, 0, 0.15);
 }
 
 .banner__grid p {
@@ -1137,7 +1136,8 @@ footer {
         height: 100vh;
         width: min(320px, 84vw);
         padding: clamp(1.8rem, 6vw, 2.4rem);
-        background: rgba(6, 6, 7, 0.98);
+        background: linear-gradient(165deg, rgba(18, 18, 22, 0.98) 0%, rgba(6, 6, 7, 0.99) 100%);
+        backdrop-filter: blur(20px);
         border-left: none;
         box-shadow: none;
         flex-direction: column;
@@ -1146,18 +1146,18 @@ footer {
         overflow-y: auto;
         overflow-x: hidden;
         scrollbar-width: thin;
-        scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+        scrollbar-color: rgba(255, 212, 0, 0.3) transparent;
         visibility: hidden;
         opacity: 0;
         transform: translateX(100%);
-        transition: right 0.32s ease, visibility 0s 0.32s, opacity 0.32s ease, transform 0.32s ease, box-shadow 0.32s ease;
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0.35s, opacity 0.35s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
         z-index: 120;
         pointer-events: none;
         will-change: transform;
     }
 
     .menu::-webkit-scrollbar {
-        width: 6px;
+        width: 5px;
     }
 
     .menu::-webkit-scrollbar-track {
@@ -1165,8 +1165,12 @@ footer {
     }
 
     .menu::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 212, 0, 0.25);
         border-radius: 999px;
+    }
+
+    .menu::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 212, 0, 0.35);
     }
 
     .menu[aria-expanded="true"] {
@@ -1174,10 +1178,10 @@ footer {
         visibility: visible;
         opacity: 1;
         transform: translateX(0);
-        transition: right 0.32s ease, visibility 0s 0s, opacity 0.32s ease, transform 0.32s ease, box-shadow 0.32s ease;
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s 0s, opacity 0.35s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
         pointer-events: auto;
-        box-shadow: -24px 0 50px rgba(0, 0, 0, 0.45);
-        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: -32px 0 60px rgba(0, 0, 0, 0.55);
+        border-left: 1px solid rgba(255, 212, 0, 0.15);
     }
 
     .menu__header {
@@ -1185,47 +1189,57 @@ footer {
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        color: var(--muted);
-        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid rgba(255, 212, 0, 0.12);
+        color: rgba(255, 212, 0, 0.85);
+        font-size: 0.88rem;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 1.5px;
     }
 
     .menu__close {
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 212, 0, 0.2);
+        background: rgba(255, 212, 0, 0.08);
         color: var(--text);
-        padding: 0.55rem 1rem;
+        padding: 0.6rem 1.1rem;
         border-radius: 999px;
         cursor: pointer;
         display: inline-flex;
         align-items: center;
-        gap: 0.55rem;
-        font-size: 0.95rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
+        gap: 0.6rem;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.8px;
         text-transform: uppercase;
-        transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        transition: background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
     }
 
     .menu__close span[aria-hidden="true"] {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         line-height: 1;
+        font-weight: 700;
     }
 
     .menu__close:hover {
-        background: rgba(255, 212, 0, 0.18);
+        background: rgba(255, 212, 0, 0.15);
         border-color: rgba(255, 212, 0, 0.35);
-        box-shadow: 0 0 14px rgba(255, 212, 0, 0.35);
+        box-shadow: 0 0 16px rgba(255, 212, 0, 0.3);
+        transform: translateX(-2px);
     }
 
     .menu a {
         width: 100%;
         font-size: 1.05rem;
-        padding: 0.6rem 0;
+        padding: 0.75rem 0;
+        font-weight: 500;
+        transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .menu a:hover {
+        color: var(--primary);
+        padding-left: 0.5rem;
     }
 
     .menu__cta {
@@ -1539,6 +1553,8 @@ footer {
         padding: 2.5rem 1.5rem;
         border-radius: 20px;
         gap: 1.5rem;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.88));
+        border: 1px solid rgba(255, 212, 0, 0.12);
     }
 
     .banner__grid h2 {
