@@ -1762,15 +1762,15 @@ footer {
     }
 
     .whatsapp-fab {
-        width: 58px;
-        height: 58px;
+        width: 76px;
+        height: 76px;
         right: 1.15rem;
         bottom: 1.15rem;
     }
 
     .whatsapp-fab__icon {
-        width: 26px;
-        height: 26px;
+        width: 36px;
+        height: 36px;
     }
 
     .page-hero {
