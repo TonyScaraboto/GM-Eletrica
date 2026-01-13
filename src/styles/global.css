@@ -619,10 +619,17 @@ body.is-menu-open {
     display: block;
 }
 
+.card-media--interfone,
+.card-media--camera {
+    aspect-ratio: 16 / 9;
+    background: rgba(0, 0, 0, 0.75);
+}
+
 .card-media--interfone img,
 .card-media--camera img {
     object-fit: contain;
     object-position: center;
+    padding: 1rem;
 }
 
 .card-content {
