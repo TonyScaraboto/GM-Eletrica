@@ -1019,6 +1019,18 @@ body.is-menu-open {
     margin-top: 1.5rem;
 }
 
+.contact-map {
+    margin-top: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+}
+
 .contact-note {
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.8));
     border: 1px solid rgba(255, 255, 255, 0.08);
