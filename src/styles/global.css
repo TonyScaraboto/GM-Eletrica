@@ -1000,10 +1000,10 @@ body.is-menu-open {
 }
 
 .banner__grid {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: flex-start;
     padding: 3rem 2rem;
     border-radius: 24px;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.85));
