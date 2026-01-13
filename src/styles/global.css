@@ -1866,3 +1866,62 @@ footer {
         transition: none;
     }
 }
+
+/* Ajustes específicos para Android */
+@supports not (-webkit-touch-callout: none) {
+    @media (max-width: 960px) {
+        .menu {
+            width: min(340px, 88vw);
+            padding: clamp(2rem, 6vw, 2.6rem) clamp(1.6rem, 5vw, 2rem);
+            background: linear-gradient(165deg, rgba(18, 18, 22, 0.99) 0%, rgba(6, 6, 7, 1) 100%);
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .menu__header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .menu__close {
+            padding: 1rem 1.6rem;
+            font-size: 0.9rem;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .menu a {
+            font-size: 1.08rem;
+            padding: 0.85rem 0;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .menu__cta {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 212, 0, 0.08);
+        }
+
+        .menu__cta .nav-cta {
+            padding: 1rem 1.6rem;
+            font-size: 1.05rem;
+            min-height: 52px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .nav-toggle {
+            padding: 0.6rem;
+            min-width: 44px;
+            min-height: 44px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body.is-menu-open {
+            position: fixed;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+}
