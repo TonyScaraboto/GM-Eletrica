@@ -78,10 +78,6 @@ body {
     object-fit: cover;
 }
 
-.servico-card__image--ventilador {
-    object-position: top;
-}
-
 
 img,
 svg {
