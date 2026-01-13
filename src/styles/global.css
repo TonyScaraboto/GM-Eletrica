@@ -1305,13 +1305,13 @@ footer {
     }
 
     .menu__cta {
-        display: block;
+        display: none;
         margin-top: auto;
         width: 100%;
     }
 
     .menu__cta .nav-cta {
-        display: inline-flex;
+        display: none;
         width: 100%;
         justify-content: center;
         padding: 0.85rem 1.5rem;
@@ -1879,12 +1879,14 @@ footer {
         }
 
         .menu__cta {
+            display: none;
             margin-top: 1.5rem;
             padding-top: 1.2rem;
             border-top: 1px solid rgba(255, 212, 0, 0.1);
         }
 
         .menu__cta .nav-cta {
+            display: none;
             padding: 0.95rem 1.6rem;
             font-size: 1.02rem;
             min-height: 50px;
@@ -1949,14 +1951,15 @@ footer {
         }
 
         .menu__cta {
+            display: none;
             margin-top: 1.5rem;
             padding-top: 1rem;
             border-top: 1px solid rgba(255, 212, 0, 0.08);
-            display: flex;
             justify-content: center;
         }
 
         .menu__cta .nav-cta {
+            display: none;
             padding: 1rem 1.6rem;
             font-size: 1.05rem;
             min-height: 52px;
