@@ -675,7 +675,15 @@ body.is-menu-open {
 
 .institucional__points {
     display: grid;
-    gap: 0.85rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 960px) {
+    .institucional__points {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+    }
 }
 
 .institucional__points li {
