@@ -702,6 +702,7 @@ body.is-menu-open {
 
 .institucional__cards {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
