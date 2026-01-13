@@ -924,7 +924,7 @@ body.is-menu-open {
 .timeline {
     border-left: 2px solid rgba(255, 255, 255, 0.08);
     display: grid;
-    gap: 1.75rem;
+    gap: 3rem;
     padding-left: 2.5rem;
 }
 
@@ -1368,10 +1368,12 @@ footer {
         border-top: 2px solid rgba(255, 255, 255, 0.08);
         padding-left: 0;
         padding-top: 2rem;
+        gap: 4rem;
     }
 
     .timeline__step {
         padding-left: 0;
+        margin-top: 2.5rem;
     }
 
     .timeline__number {
