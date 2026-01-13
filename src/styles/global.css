@@ -619,6 +619,12 @@ body.is-menu-open {
     display: block;
 }
 
+.card-media--interfone img,
+.card-media--camera img {
+    object-fit: contain;
+    object-position: center;
+}
+
 .card-content {
     display: flex;
     flex-direction: column;
