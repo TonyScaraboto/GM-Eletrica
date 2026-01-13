@@ -629,7 +629,6 @@ body.is-menu-open {
 .card-media--camera img {
     object-fit: contain;
     object-position: center;
-    padding: 1.5rem;
     width: 100%;
     height: 100%;
 }
