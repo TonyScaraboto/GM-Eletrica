@@ -1929,9 +1929,9 @@ footer {
         }
 
         .menu__close {
-            padding: 1rem 1.6rem;
-            font-size: 0.9rem;
+            padding: 0.95rem 1.55rem;
             -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .menu a {
