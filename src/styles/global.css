@@ -1383,6 +1383,13 @@ footer {
     .whatsapp-fab {
         right: 1.25rem;
         bottom: 1.25rem;
+        width: 72px;
+        height: 72px;
+    }
+
+    .whatsapp-fab__icon {
+        height: 32px;
+        width: 32px;
     }
 }
 
