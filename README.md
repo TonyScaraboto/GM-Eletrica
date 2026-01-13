@@ -30,3 +30,27 @@ npm run preview    # testa build localmente
 1. Atualizar telefone, e-mail e endereço fictícios na seção de contato.
 2. Adicionar imagens ou ilustrações em `public/` e referenciar na página.
 3. Considerar integrações com formulários (Formspree, Resend, etc.) ou um CTA que direcione diretamente ao WhatsApp.
+
+## Deploy
+
+### Opção 1: Vercel (Recomendado)
+1. Acesse [vercel.com](https://vercel.com)
+2. Conecte seu repositório GitHub
+3. O Vercel detectará automaticamente o projeto Astro
+4. Deploy automático a cada push na branch `main`
+
+### Opção 2: Netlify
+1. Acesse [netlify.com](https://netlify.com)
+2. Importe o repositório do GitHub
+3. Configure:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+4. Deploy automático configurado
+
+### Opção 3: GitHub Pages
+```bash
+npm run build
+# Fazer deploy da pasta dist/ para gh-pages
+```
+
+**Status:** ✅ Build passando | 📱 Mobile otimizado | 🚀 Pronto para produção
