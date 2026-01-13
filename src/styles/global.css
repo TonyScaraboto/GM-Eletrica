@@ -14,9 +14,13 @@
 
 html {
     font-family: var(--font-family);
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
     background:
         radial-gradient(circle at 10% 0%, rgba(255, 212, 0, 0.16) 0%, rgba(255, 212, 0, 0) 45%),
         linear-gradient(165deg, #060607 0%, #0f0f13 55%, #121720 100%);
+    background-attachment: fixed;
     color: var(--text);
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -26,14 +30,18 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
+    width: 100%;
     min-height: 100vh;
     min-height: -webkit-fill-available;
     min-height: 100dvh;
+    overflow-x: hidden;
     background: linear-gradient(180deg, rgba(6, 6, 7, 0.92) 0%, rgba(5, 5, 5, 0.98) 100%);
     background-attachment: fixed;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
 }
 
 /* Portfólio - Home */
