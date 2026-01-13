@@ -38,7 +38,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           ></iframe>
         </div>
       </div>
-      <form class="contato__form">
+      <form class="contato__form" id="contactForm">
         <label for="nome">Nome completo</label>
         <input id="nome" name="nome" type="text" required />
 
@@ -51,8 +51,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <label for="mensagem">Como podemos ajudar?</label>
         <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
 
-        <button type="submit">Enviar mensagem</button>
+        <button type="submit">Enviar via WhatsApp</button>
       </form>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nome = (document.getElementById('nome') as HTMLInputElement)?.value || '';
+    const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
+    const telefone = (document.getElementById('telefone') as HTMLInputElement)?.value || '';
+    const mensagem = (document.getElementById('mensagem') as HTMLTextAreaElement)?.value || '';
+    
+    let textoWhatsApp = `Olá! Meu nome é *${nome}*.\n\n`;
+    textoWhatsApp += `📧 E-mail: ${email}\n`;
+    if (telefone) {
+      textoWhatsApp += `📱 Telefone: ${telefone}\n`;
+    }
+    textoWhatsApp += `\n💬 Mensagem:\n${mensagem}`;
+    
+    const numeroWhatsApp = '5513996999930';
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoWhatsApp)}`;
+    
+    window.open(urlWhatsApp, '_blank');
+  });
+</script>
