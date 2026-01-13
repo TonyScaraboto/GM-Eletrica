@@ -87,7 +87,7 @@ const ano = new Date().getFullYear();
         </div>
         <div>
           <p>&copy; {ano} GM Elétrica. Todos os direitos reservados.</p>
-          <a class="footer__link" href="#topo">Voltar ao topo</a>
+          <a class="footer__link" href="#topo" id="backToTop">Voltar ao topo</a>
         </div>
       </div>
     </footer>
@@ -147,6 +147,18 @@ const ano = new Date().getFullYear();
 
         if (closeButton) {
           closeButton.addEventListener('click', () => setMenuState(false));
+        }
+
+        // Back to top functionality
+        const backToTopLink = document.getElementById('backToTop');
+        if (backToTopLink) {
+          backToTopLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          });
         }
 
         document.addEventListener('keydown', (event) => {
