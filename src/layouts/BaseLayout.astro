@@ -1,55 +1,3 @@
-        <script is:inline>
-          document.addEventListener('DOMContentLoaded', () => {
-            const whatsappFab = document.getElementById('whatsappFab');
-            const socialFabGroup = document.getElementById('socialFabGroup');
-            let socialVisible = false;
-            if (whatsappFab && socialFabGroup) {
-              whatsappFab.addEventListener('click', (e) => {
-                // Se clicar para abrir o WhatsApp normalmente, não mostrar as opções
-                if (!socialVisible) {
-                  e.preventDefault();
-                  socialFabGroup.style.display = 'flex';
-                  socialVisible = true;
-                  setTimeout(() => {
-                    document.addEventListener('click', hideSocial, { once: true });
-                  }, 10);
-                }
-              });
-              function hideSocial(event) {
-                if (
-                  !socialFabGroup.contains(event.target) &&
-                  event.target !== whatsappFab
-                ) {
-                  socialFabGroup.style.display = 'none';
-                  socialVisible = false;
-                }
-              }
-              // Se clicar em um dos botões sociais, fecha o grupo
-              socialFabGroup.querySelectorAll('a').forEach(btn => {
-                btn.addEventListener('click', () => {
-                  socialFabGroup.style.display = 'none';
-                  socialVisible = false;
-                });
-              });
-            }
-          });
-        </script>
-    <div class="social-fab-group" id="socialFabGroup" style="display: none;">
-      <a
-        class="social-fab instagram"
-        href="https://www.instagram.com/gmeletricistaperuibe/" target="_blank" rel="noopener noreferrer"
-        aria-label="Instagram da GM Eletricista"
-      >
-        <svg width="28" height="28" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 186c-39.5 0-71.5-32-71.5-71.5s32-71.5 71.5-71.5 71.5 32 71.5 71.5-32 71.5-71.5 71.5zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.1S388.6 1.7 353.3 0C317.7-1.7 130.3-1.7 94.7 0 59.4 1.7 28 9.9 2.6 36.2S1.7 123.4 0 158.7C-1.7 194.3-1.7 381.7 0 417.3c1.7 35.3 9.9 66.7 36.2 92.1s56.8 34.5 92.1 36.2c35.6 1.7 223 1.7 258.6 0 35.3-1.7 66.7-9.9 92.1-36.2s34.5-56.8 36.2-92.1c1.7-35.6 1.7-223 0-258.6zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5C121.1 21.5 190.9 24.2 224 24.2s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.7 102.9-9 132.3z"/></svg>
-      </a>
-      <a
-        class="social-fab facebook"
-        href="https://www.facebook.com/profile.php?id=61587410630933" target="_blank" rel="noopener noreferrer"
-        aria-label="Facebook da GM Eletricista"
-      >
-        <svg width="28" height="28" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91V127.91c0-25.35 12.42-50.06 52.24-50.06H293V6.26S259.5 0 225.36 0c-73.22 0-121 44.38-121 124.72v70.62H22.89V288h81.47v224h100.2V288z"/></svg>
-      </a>
-    </div>
 ---
 import "../styles/global.css";
 
@@ -74,6 +22,60 @@ const navItems: NavItem[] = [
 
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const ano = new Date().getFullYear();
+---
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const whatsappFab = document.getElementById('whatsappFab');
+    const socialFabGroup = document.getElementById('socialFabGroup');
+    let socialVisible = false;
+    if (whatsappFab && socialFabGroup) {
+      whatsappFab.addEventListener('click', (e) => {
+        // Se clicar para abrir o WhatsApp normalmente, não mostrar as opções
+        if (!socialVisible) {
+          e.preventDefault();
+          socialFabGroup.style.display = 'flex';
+          socialVisible = true;
+          setTimeout(() => {
+            document.addEventListener('click', hideSocial, { once: true });
+          }, 10);
+        }
+      });
+      function hideSocial(event) {
+        if (
+          !socialFabGroup.contains(event.target) &&
+          event.target !== whatsappFab
+        ) {
+          socialFabGroup.style.display = 'none';
+          socialVisible = false;
+        }
+      }
+      // Se clicar em um dos botões sociais, fecha o grupo
+      socialFabGroup.querySelectorAll('a').forEach(btn => {
+        btn.addEventListener('click', () => {
+          socialFabGroup.style.display = 'none';
+          socialVisible = false;
+        });
+      });
+    }
+  });
+</script>
+    <div class="social-fab-group" id="socialFabGroup" style="display: none;">
+      <a
+        class="social-fab instagram"
+        href="https://www.instagram.com/gmeletricistaperuibe/" target="_blank" rel="noopener noreferrer"
+        aria-label="Instagram da GM Eletricista"
+      >
+        <svg width="28" height="28" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 186c-39.5 0-71.5-32-71.5-71.5s32-71.5 71.5-71.5 71.5 32 71.5 71.5-32 71.5-71.5 71.5zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.1S388.6 1.7 353.3 0C317.7-1.7 130.3-1.7 94.7 0 59.4 1.7 28 9.9 2.6 36.2S1.7 123.4 0 158.7C-1.7 194.3-1.7 381.7 0 417.3c1.7 35.3 9.9 66.7 36.2 92.1s56.8 34.5 92.1 36.2c35.6 1.7 223 1.7 258.6 0 35.3-1.7 66.7-9.9 92.1-36.2s34.5-56.8 36.2-92.1c1.7-35.6 1.7-223 0-258.6zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5C121.1 21.5 190.9 24.2 224 24.2s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.7 102.9-9 132.3z"/></svg>
+      </a>
+      <a
+        class="social-fab facebook"
+        href="https://www.facebook.com/profile.php?id=61587410630933" target="_blank" rel="noopener noreferrer"
+        aria-label="Facebook da GM Eletricista"
+      >
+        <svg width="28" height="28" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91V127.91c0-25.35 12.42-50.06 52.24-50.06H293V6.26S259.5 0 225.36 0c-73.22 0-121 44.38-121 124.72v70.62H22.89V288h81.47v224h100.2V288z"/></svg>
+      </a>
+    </div>
 ---
 
 <html lang="pt-BR">
