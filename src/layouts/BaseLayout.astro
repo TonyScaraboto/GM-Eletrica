@@ -112,9 +112,14 @@ const {
             {
               navItems.map(({ label, href }) => {
 
-                // Corrige comparação para ignorar barra final e garantir que só a página correta fique ativa
+                // Corrige comparação para garantir que só a página correta fique ativa
                 const normalize = (url) => url.replace(/\/$/, "");
-                const isCurrent = normalize(currentPath) === normalize(href);
+                let isCurrent = false;
+                if (href === "/") {
+                  isCurrent = currentPath === "/";
+                } else {
+                  isCurrent = normalize(currentPath) === normalize(href);
+                }
 
                 return (
                   <li>
