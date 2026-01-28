@@ -58,25 +58,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 </BaseLayout>
 
-<script>
-  document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const nome = (document.getElementById('nome') as HTMLInputElement)?.value || '';
-    const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
-    const telefone = (document.getElementById('telefone') as HTMLInputElement)?.value || '';
-    const mensagem = (document.getElementById('mensagem') as HTMLTextAreaElement)?.value || '';
-    
-    let textoWhatsApp = `Olá! Meu nome é *${nome}*.\n\n`;
-    textoWhatsApp += `📧 E-mail: ${email}\n`;
-    if (telefone) {
-      textoWhatsApp += `📱 Telefone: ${telefone}\n`;
-    }
-    textoWhatsApp += `\n💬 Mensagem:\n${mensagem}`;
-    
-    const numeroWhatsApp = '5513996999930';
-    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoWhatsApp)}`;
-    
-    window.open(urlWhatsApp, '_blank');
-  });
-</script>
+<script src="/scripts/contact.js" defer></script>

@@ -1,11 +1,19 @@
     ---
+    import "../styles/global.css";
+
     const { title = "GM Eletricista - Serviços Elétricos em Peruíbe", description = "Instalações, manutenções e projetos elétricos residenciais, comerciais e industriais em Peruíbe e região. Segurança, design e atendimento profissional.", navItems = [
       { label: "Início", href: "/" },
       { label: "Diferenciais", href: "/diferenciais" },
       { label: "Serviços", href: "/servicos" },
       { label: "Processo", href: "/processo" },
       { label: "Contato", href: "/contato" },
-    ], currentPath = "/", ano = new Date().getFullYear() } = Astro.props;
+    ], currentPath = "/", ano = new Date().getFullYear() }: {
+      title?: string;
+      description?: string;
+      navItems?: { label: string; href: string }[];
+      currentPath?: string;
+      ano?: number;
+    } = Astro.props;
     ---
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
