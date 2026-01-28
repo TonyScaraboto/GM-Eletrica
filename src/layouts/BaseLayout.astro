@@ -38,6 +38,8 @@ const ano = new Date().getFullYear();
           setTimeout(() => {
             document.addEventListener('click', hideSocial, { once: true });
           }, 10);
+        } else {
+          // Se já está visível, segue o link normalmente (WhatsApp)
         }
       });
       function hideSocial(event) {
@@ -64,9 +66,10 @@ const ano = new Date().getFullYear();
         href="https://www.instagram.com/gmeletricistaperuibe/" target="_blank" rel="noopener noreferrer"
         aria-label="Instagram da GM Eletricista"
       >
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" stroke="#e1306c" stroke-width="2" fill="none"/>
-          <circle cx="12" cy="12" r="5" fill="#e1306c"/>
+        <svg width="28" height="28" viewBox="0 0 448 512" fill="none" stroke="#e1306c" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="48" y="80" width="352" height="352" rx="96" stroke="#e1306c" stroke-width="32" fill="none"/>
+          <circle cx="224" cy="256" r="80" stroke="#e1306c" stroke-width="32" fill="none"/>
+          <circle cx="352" cy="160" r="24" fill="#e1306c"/>
         </svg>
       </a>
       <a
@@ -74,9 +77,8 @@ const ano = new Date().getFullYear();
         href="https://www.facebook.com/profile.php?id=61587410630933" target="_blank" rel="noopener noreferrer"
         aria-label="Facebook da GM Eletricista"
       >
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <rect x="4" y="4" width="16" height="16" rx="4" fill="#1877f3"/>
-          <text x="12" y="17" text-anchor="middle" font-size="12" fill="#fff" font-family="Arial, sans-serif">f</text>
+        <svg width="28" height="28" viewBox="0 0 320 512" fill="none" stroke="#1877f3" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M279.14 288l14.22-92.66h-88.91V127.91c0-25.35 12.42-50.06 52.24-50.06H293V6.26S259.5 0 225.36 0c-73.22 0-121 44.38-121 124.72v70.62H22.89V288h81.47v224h100.2V288z"/>
         </svg>
       </a>
     </div>

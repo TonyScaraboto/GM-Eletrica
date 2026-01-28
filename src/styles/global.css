@@ -1,4 +1,6 @@
 /* Botão flutuante WhatsApp */
+
+/* Botão flutuante WhatsApp */
 .whatsapp-fab {
     position: fixed;
     right: 1.5rem;
@@ -30,7 +32,7 @@
 .social-fab-group {
     position: fixed;
     right: 1.5rem;
-    bottom: 5.5rem;
+    bottom: calc(1.5rem + 56px + 1rem);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -39,13 +41,23 @@
 }
 .social-fab-group .social-fab {
     opacity: 0;
-    transform: translateY(20px) scale(0.95);
     pointer-events: auto;
     transition: opacity 0.3s cubic-bezier(.4,0,.2,1), transform 0.3s cubic-bezier(.4,0,.2,1);
+    transform: translateY(0) scale(0.95);
 }
-.social-fab-group.active .social-fab {
+.social-fab-group .social-fab.facebook {
+    transform: translateY(0) scale(0.95);
+}
+.social-fab-group .social-fab.instagram {
+    transform: translateY(0) scale(0.95);
+}
+.social-fab-group.active .social-fab.facebook {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(-65px) scale(1);
+}
+.social-fab-group.active .social-fab.instagram {
+    opacity: 1;
+    transform: translateY(-130px) scale(1);
 }
 .social-fab {
     display: flex;
