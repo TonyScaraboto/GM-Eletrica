@@ -337,7 +337,6 @@ section {
     border-radius: 6px;
 }
 
-.menu a:hover::after,
 .menu a[aria-current="page"]::after {
     opacity: 0.95;
     transform: scaleX(1);
