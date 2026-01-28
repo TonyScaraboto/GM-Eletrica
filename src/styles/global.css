@@ -12,36 +12,32 @@
 /* === Floating Action Buttons (FAB) - Unified Style === */
 
 /* Floating Action Buttons (FAB) - Unified Style */
+
 .fab,
-.social-fab,
-.whatsapp-fab {
-    position: fixed;
-    right: 1.5rem;
-    z-index: 1001;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    font-size: 1.4rem;
-    color: #fff;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.18s, color 0.18s, transform 0.18s, opacity 0.18s;
+.social-fab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        font-size: 1.4rem;
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.18s, color 0.18s, transform 0.18s, opacity 0.18s;
 }
 
-/* WhatsApp FAB */
-.whatsapp-fab {
-  bottom: 1.5rem;
-  background: #25d366;
+/* WhatsApp FAB dentro do grupo */
+.social-fab.whatsapp {
+    background: #25d366;
 }
-.whatsapp-fab:hover {
-  background: #1ebe5d;
-  transform: scale(1.08);
+.social-fab.whatsapp:hover {
+    background: #1ebe5d;
+    transform: scale(1.08);
 }
 
 /* Social FAB group (above WhatsApp) */
