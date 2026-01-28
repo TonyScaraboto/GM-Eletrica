@@ -322,9 +322,13 @@ section {
     transition: color 0.18s ease, transform 0.18s ease;
 }
 
-.menu a:hover,
-.menu a[aria-current="page"] {
+.menu a:hover {
     color: var(--primary-strong);
+}
+
+.menu a[aria-current="page"] {
+    /* Mantém a cor padrão, só destaca com o sublinhado */
+    color: rgba(255,255,255,0.92);
 }
 
 .menu a:focus-visible {
