@@ -19,49 +19,45 @@
     align-items: flex-end;
 }
 
-.contact-fab {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: #060607;
-    color: #ffd400;
-    border: 2.5px solid #ffd400;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    font-size: 1.7rem;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, transform 0.2s;
-    outline: none;
-    border: none;
-}
-.contact-fab:hover {
-    background: #ffd400;
-    color: #060607;
-    transform: scale(1.08);
-}
-
-.contact-balloons {
-    position: absolute;
-}
-
-.contact-balloons .social-fab {
-    display: flex;
+/* Footer Social Buttons - padronizado com os FABs flutuantes */
+.footer-social__btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 56px;
     height: 56px;
     border-radius: 50%;
     background: var(--surface);
-    color: var(--primary);
+    color: #fff;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     border: none;
     outline: none;
     cursor: pointer;
     text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
+    position: relative;
+}
+    /* Todos os botões sociais com fundo sólido igual ao WhatsApp */
+    .footer-social__btn.instagram {
+        background: #dd2a7b;
+    }
+    .footer-social__btn.facebook {
+        background: #1877f2;
+    }
+    .footer-social__btn.whatsapp {
+        background: #25d366;
+    }
+    .footer-social__btn:hover {
+        filter: brightness(0.92);
+        transform: scale(1.08);
+    }
+/* Garante que ícones SVG fiquem brancos */
+.footer-social__btn svg path,
+.footer-social__btn svg circle,
+.footer-social__btn svg rect {
+    fill: currentColor !important;
+}
     position: relative;
     pointer-events: auto; /* allow clicks on buttons */
     z-index: 1001;
@@ -141,41 +137,41 @@
 .social-fab-group .social-fab {
     opacity: 0;
     pointer-events: auto;
-    transition: opacity 0.3s cubic-bezier(.4,0,.2,1), transform 0.3s cubic-bezier(.4,0,.2,1);
-    transform: translateY(0) scale(0.95);
+    transition: opacity 0.28s cubic-bezier(.4,0,.2,1), transform 0.28s cubic-bezier(.4,0,.2,1);
+    transform: translateY(0) scale(0.98);
 }
-.social-fab-group .social-fab.facebook {
-    transform: translateY(0) scale(0.95);
-}
+.social-fab-group .social-fab.facebook,
 .social-fab-group .social-fab.instagram {
-    transform: translateY(0) scale(0.95);
+    transform: translateY(0) scale(0.98);
 }
 .social-fab-group.active .social-fab.facebook {
     opacity: 1;
-    transform: translateY(-65px) scale(1);
+    transform: translateY(-68px) scale(1);
 }
 .social-fab-group.active .social-fab.instagram {
     opacity: 1;
-    transform: translateY(-130px) scale(1);
+    transform: translateY(-136px) scale(1);
 }
 .social-fab {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: var(--surface);
-    color: var(--primary);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    font-size: 1.3rem;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    font-size: 1.2rem;
     border: none;
     outline: none;
     cursor: pointer;
     text-decoration: none;
     opacity: 1;
     transform: translateY(0);
-    transition: background 0.2s, color 0.2s, transform 0.2s, opacity 0.2s;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
+    position: relative;
+    pointer-events: auto;
 }
 .social-fab.instagram {
     color: #e1306c;
@@ -258,40 +254,19 @@
     pointer-events: none; /* container doesn't capture events */
 }
 
-.social-fab {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--surface);
-    color: var(--primary);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
-    font-size: 1.2rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-    position: relative;
-    pointer-events: auto; /* allow clicks on buttons */
-}
-
 .social-fab:hover {
-    background: var(--primary);
-    color: var(--black);
     transform: translateY(-6px) scale(1.06);
+    filter: brightness(0.98);
 }
 
-.social-fab.instagram { color: #e1306c; }
-.social-fab.instagram:hover { background: #e1306c; color: #fff; }
+.social-fab.instagram { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); }
+.social-fab.instagram:hover { filter: brightness(0.95); }
 
-.social-fab.facebook { color: #1877f3; }
-.social-fab.facebook:hover { background: #1877f3; color: #fff; }
+.social-fab.facebook { background: linear-gradient(135deg,#1877f2,#335fd1); }
+.social-fab.facebook:hover { filter: brightness(0.95); }
 
-.social-fab.whatsapp { color: #25d366; }
-.ocial-fab.whatsapp:hover { background: #25d366; color: #fff; }
+.social-fab.whatsapp { background: #25d366; }
+.social-fab.whatsapp:hover { filter: brightness(0.95); }
 
 /* Standardize social FABs to match WhatsApp visual style */
 .social-fab {
@@ -623,12 +598,13 @@ body.is-menu-open {
     border-radius: 50%;
     box-shadow: 0 0 8px rgba(255, 212, 0, 0.2);
     transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.nav-toggle[aria-expanded="true"] {
-    background: transparent;
-}
-
+/* Todos os FABs sociais com fundo sólido igual ao WhatsApp */
+.social-fab.instagram { background: #dd2a7b; }
+.social-fab.instagram:hover { filter: brightness(0.92); }
+.social-fab.facebook { background: #1877f2; }
+.social-fab.facebook:hover { filter: brightness(0.92); }
+.social-fab.whatsapp { background: #25d366; }
+.social-fab.whatsapp:hover { filter: brightness(0.92); }
 .nav-toggle[aria-expanded="true"] span {
     background: var(--primary);
     box-shadow: 0 0 12px rgba(255, 212, 0, 0.5);
