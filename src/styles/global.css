@@ -293,6 +293,33 @@
 .social-fab.whatsapp { color: #25d366; }
 .ocial-fab.whatsapp:hover { background: #25d366; color: #fff; }
 
+/* Standardize social FABs to match WhatsApp visual style */
+.social-fab {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    font-size: 1.2rem;
+    color: #fff; /* icon color */
+    transition: transform 0.18s ease, filter 0.18s ease, opacity 0.18s ease;
+}
+
+.social-fab.instagram { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); }
+.social-fab.facebook { background: linear-gradient(135deg,#1877f2,#335fd1); }
+.social-fab.whatsapp { background: #25d366; }
+
+.social-fab:hover { transform: translateY(-4px) scale(1.04); filter: brightness(0.96); }
+
+/* Ensure SVG icons inside FABs render white */
+.social-fab svg path,
+.social-fab svg circle,
+.social-fab svg rect {
+    fill: currentColor !important;
+}
+
 /* Tooltip for social FABs */
 .social-fab[data-tooltip]::after {
     content: attr(data-tooltip);
