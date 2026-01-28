@@ -1,6 +1,6 @@
-# GM Elétrica – Astro
+# GM Eletricista – Astro
 
-Site institucional desenvolvido com [Astro](https://astro.build) para apresentar os serviços da GM Elétrica, enfatizando a importância de instalações corretas e a paleta preto/amarela da marca.
+Site institucional desenvolvido com [Astro](https://astro.build) para apresentar os serviços da GM Eletricista, enfatizando a importância de instalações corretas e a paleta preto/amarela da marca.
 
 ## Recursos principais
 - Landing page com hero, cards de serviços ilustrados por trabalhadores e diferenciais técnicos
