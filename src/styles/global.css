@@ -37,8 +37,6 @@
 
 .contact-balloons {
     position: absolute;
-    right: 0;
-    bottom: 0;
     .social-fab {
         display: flex;
         align-items: center;
@@ -57,20 +55,21 @@
         text-decoration: none;
         position: relative;
         pointer-events: auto; /* allow clicks on buttons */
+        z-index: 1001;
     }
-    transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1), margin-bottom 0.35s cubic-bezier(.4,0,.2,1);
-}
-.contact-balloon.facebook {
-    color: #1877f3;
-}
-.contact-balloon.instagram {
+
+    .social-fab:hover {
+        transform: scale(1.08);
+    }
+
     .social-fab.instagram { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); color: #fff; }
     .social-fab.instagram:hover { filter: brightness(0.95); }
+
     .social-fab.facebook { background: linear-gradient(135deg,#1877f2,#335fd1); color: #fff; }
     .social-fab.facebook:hover { filter: brightness(0.95); }
+
     .social-fab.whatsapp { background: #25d366; color: #fff; }
     .social-fab.whatsapp:hover { filter: brightness(0.95); }
-    color: #e1306c;
 }
 .contact-balloon.whatsapp {
     color: #25d366;
@@ -1548,6 +1547,9 @@ footer {
         box-shadow: -32px 0 60px rgba(0, 0, 0, 0.55);
         border-left: 1px solid rgba(255, 212, 0, 0.15);
     }
+
+    /* disable desktop underline on mobile to avoid layout issues */
+    .menu a::after { display: none !important; }
 
     .menu__header {
         display: flex;
