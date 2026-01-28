@@ -8,314 +8,102 @@
 /* hide the menu CTA by default (desktop); mobile media queries will show it */
 .menu__cta { display: none; }
 
-/* Botão flutuante de contato e balões sociais */
-.contact-fab-container {
-    position: fixed;
-    right: 1.5rem;
-    bottom: 1.5rem;
-    z-index: 1001;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
 
-/* Footer Social Buttons - padronizado com os FABs flutuantes */
-.footer-social__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--surface);
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    font-size: 1.2rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
-    position: relative;
-}
-/* Todos os botões sociais com fundo sólido igual ao WhatsApp */
-.footer-social__btn.instagram {
-    background: #dd2a7b;
-}
-.footer-social__btn.facebook {
-    background: #1877f2;
-}
-.footer-social__btn.whatsapp {
-    background: #25d366;
-}
-.footer-social__btn:hover {
-    filter: brightness(0.92);
-    transform: scale(1.08);
-}
-/* Garante que ícones SVG fiquem brancos */
-.footer-social__btn svg path,
-.footer-social__btn svg circle,
-.footer-social__btn svg rect {
-    fill: currentColor !important;
-}
-
-.contact-balloons .social-fab:hover {
-    transform: scale(1.08);
-}
-
-.contact-balloons .social-fab.instagram { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); color: #fff; }
-.contact-balloons .social-fab.instagram:hover { filter: brightness(0.95); }
-
-.contact-balloons .social-fab.facebook { background: linear-gradient(135deg,#1877f2,#335fd1); color: #fff; }
-.contact-balloons .social-fab.facebook:hover { filter: brightness(0.95); }
-
-.contact-balloons .social-fab.whatsapp { background: #25d366; color: #fff; }
-.contact-balloons .social-fab.whatsapp:hover { filter: brightness(0.95); }
-.contact-balloon.whatsapp {
-    color: #25d366;
-}
-.contact-balloons.active .contact-balloon.facebook {
-    opacity: 1;
-    transform: translateY(-65px) scale(1);
-    margin-bottom: 8px;
-}
-.contact-balloons.active .contact-balloon.instagram {
-    opacity: 1;
-    transform: translateY(-130px) scale(1);
-    margin-bottom: 8px;
-}
-.contact-balloons.active .contact-balloon.whatsapp {
-    opacity: 1;
-    transform: translateY(-195px) scale(1);
-    margin-bottom: 8px;
-}
-/* Botão flutuante WhatsApp */
-
-/* Botão flutuante WhatsApp */
+/* === Floating Action Buttons (FAB) - Unified Style === */
+.fab,
+.social-fab,
 .whatsapp-fab {
-    position: fixed;
-    right: 1.5rem;
-    bottom: 1.5rem;
-    z-index: 1001;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: #25d366;
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    font-size: 1.7rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s, transform 0.2s;
+  position: fixed;
+  right: 1.5rem;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  font-size: 1.4rem;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s, transform 0.18s, opacity 0.18s;
+  position: fixed;
+}
+
+/* WhatsApp FAB */
+.whatsapp-fab {
+  bottom: 1.5rem;
+  background: #25d366;
 }
 .whatsapp-fab:hover {
-    background: #1ebe5d;
-    color: #fff;
-    transform: scale(1.08);
+  background: #1ebe5d;
+  transform: scale(1.08);
 }
 
-/* Grupo de botões sociais flutuantes (acima do WhatsApp) */
+/* Social FAB group (above WhatsApp) */
 .social-fab-group {
-    position: fixed;
-    right: 1.5rem;
-    bottom: calc(1.5rem + 56px + 1rem);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    z-index: 1000;
-    pointer-events: none;
-}
-.social-fab-group .social-fab {
-    opacity: 0;
-    pointer-events: auto;
-    transition: opacity 0.28s cubic-bezier(.4,0,.2,1), transform 0.28s cubic-bezier(.4,0,.2,1);
-    transform: translateY(0) scale(0.98);
-}
-.social-fab-group .social-fab.facebook,
-.social-fab-group .social-fab.instagram {
-    transform: translateY(0) scale(0.98);
-}
-.social-fab-group.active .social-fab.facebook {
-    opacity: 1;
-    transform: translateY(-68px) scale(1);
-}
-.social-fab-group.active .social-fab.instagram {
-    opacity: 1;
-    transform: translateY(-136px) scale(1);
+  position: fixed;
+  right: 1.5rem;
+  bottom: calc(1.5rem + 56px + 0.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 1002;
+  pointer-events: none;
 }
 .social-fab {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--surface);
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    font-size: 1.2rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-    opacity: 1;
-    transform: translateY(0);
-    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
-    position: relative;
-    pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
+  background: #222;
+  color: #fff;
+  transition: background 0.18s, color 0.18s, transform 0.18s, opacity 0.18s;
+  position: relative;
 }
 .social-fab.instagram {
-    color: #e1306c;
-}
-.social-fab.instagram:hover {
-    background: #e1306c;
-    color: #fff;
+  background: #dd2a7b;
 }
 .social-fab.facebook {
-    color: #1877f3;
+  background: #1877f2;
 }
-.social-fab.facebook:hover {
-    background: #1877f3;
-    color: #fff;
-}
-/* Footer Social Buttons */
-.footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-    margin: 2rem 0 0 0;
-}
-
-.footer-social__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--surface);
-    color: var(--primary);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    transition: background 0.2s, color 0.2s, transform 0.2s;
-    font-size: 1.3rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.footer-social__btn:hover {
-    background: var(--primary);
-    color: var(--black);
-    transform: translateY(-2px) scale(1.08);
-}
-
-.footer-social__btn.instagram {
-    color: #e1306c;
-}
-.footer-social__btn.instagram:hover {
-    background: #e1306c;
-    color: #fff;
-}
-
-.footer-social__btn.facebook {
-    color: #1877f3;
-}
-.footer-social__btn.facebook:hover {
-    background: #1877f3;
-    color: #fff;
-}
-
-.footer-social__btn.whatsapp {
-    color: #25d366;
-}
-.footer-social__btn.whatsapp:hover {
-    background: #25d366;
-    color: #fff;
-}
-/* Social Floating Action Buttons (positioned above WhatsApp FAB) */
-.social-fab-group {
-    position: fixed;
-    right: 1.5rem;
-    bottom: calc(1.5rem + 56px + 0.5rem);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem; /* reduced vertical gap */
-    z-index: 1002;
-    pointer-events: none; /* container doesn't capture events */
-}
-
 .social-fab:hover {
-    transform: translateY(-6px) scale(1.06);
-    filter: brightness(0.98);
+  filter: brightness(0.92);
+  transform: scale(1.08);
 }
-
-.social-fab.instagram { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); }
-.social-fab.instagram:hover { filter: brightness(0.95); }
-
-.social-fab.facebook { background: linear-gradient(135deg,#1877f2,#335fd1); }
-.social-fab.facebook:hover { filter: brightness(0.95); }
-
-.social-fab.whatsapp { background: #25d366; }
-.social-fab.whatsapp:hover { filter: brightness(0.95); }
-
-/* Standardize social FABs to match WhatsApp visual style */
-.social-fab {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    font-size: 1.2rem;
-    color: #fff; /* icon color */
-    transition: transform 0.18s ease, filter 0.18s ease, opacity 0.18s ease;
-}
-
-.social-fab.instagram { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); }
-.social-fab.facebook { background: linear-gradient(135deg,#1877f2,#335fd1); }
-.social-fab.whatsapp { background: #25d366; }
-
-.social-fab:hover { transform: translateY(-4px) scale(1.04); filter: brightness(0.96); }
 
 /* Ensure SVG icons inside FABs render white */
 .social-fab svg path,
 .social-fab svg circle,
-.social-fab svg rect {
-    fill: currentColor !important;
+.social-fab svg rect,
+.whatsapp-fab svg path,
+.whatsapp-fab svg circle,
+.whatsapp-fab svg rect {
+  fill: currentColor !important;
 }
 
 /* Tooltip for social FABs */
 .social-fab[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    right: calc(100% + 0.6rem);
-    top: 50%;
-    transform: translateY(-50%) translateX(6px);
-    background: rgba(0,0,0,0.75);
-    color: #fff;
-    padding: 6px 8px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.18s ease, transform 0.18s ease;
+  content: attr(data-tooltip);
+  position: absolute;
+  right: calc(100% + 0.6rem);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s, transform 0.18s;
 }
-.social-fab[data-tooltip]:hover::after { opacity: 1; transform: translateY(-50%) translateX(0); }
-
-/* Entrance animation for subtle appearance */
-.social-fab-group .social-fab { opacity: 0; transform: translateY(6px) scale(0.98); animation: fab-in 380ms cubic-bezier(.2,.9,.2,1) forwards; }
-.social-fab-group .social-fab.instagram { animation-delay: 0ms; }
-.social-fab-group .social-fab.facebook { animation-delay: 60ms; }
-
-@keyframes fab-in { to { opacity: 1; transform: translateY(0) scale(1); } }
+.social-fab[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
 
 :root {
     --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
