@@ -512,6 +512,9 @@ section {
     gap: 1.5rem;
 }
 
+/* hide menu header label on desktop; mobile media queries will show it */
+.menu__header { display: none; }
+
 .menu a::after {
     content: "";
     position: absolute;
