@@ -38,29 +38,25 @@
     transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
     position: relative;
 }
-    /* Todos os botões sociais com fundo sólido igual ao WhatsApp */
-    .footer-social__btn.instagram {
-        background: #dd2a7b;
-    }
-    .footer-social__btn.facebook {
-        background: #1877f2;
-    }
-    .footer-social__btn.whatsapp {
-        background: #25d366;
-    }
-    .footer-social__btn:hover {
-        filter: brightness(0.92);
-        transform: scale(1.08);
-    }
+/* Todos os botões sociais com fundo sólido igual ao WhatsApp */
+.footer-social__btn.instagram {
+    background: #dd2a7b;
+}
+.footer-social__btn.facebook {
+    background: #1877f2;
+}
+.footer-social__btn.whatsapp {
+    background: #25d366;
+}
+.footer-social__btn:hover {
+    filter: brightness(0.92);
+    transform: scale(1.08);
+}
 /* Garante que ícones SVG fiquem brancos */
 .footer-social__btn svg path,
 .footer-social__btn svg circle,
 .footer-social__btn svg rect {
     fill: currentColor !important;
-}
-    position: relative;
-    pointer-events: auto; /* allow clicks on buttons */
-    z-index: 1001;
 }
 
 .contact-balloons .social-fab:hover {
@@ -598,6 +594,7 @@ body.is-menu-open {
     border-radius: 50%;
     box-shadow: 0 0 8px rgba(255, 212, 0, 0.2);
     transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}    
 /* Todos os FABs sociais com fundo sólido igual ao WhatsApp */
 .social-fab.instagram { background: #dd2a7b; }
 .social-fab.instagram:hover { filter: brightness(0.92); }
