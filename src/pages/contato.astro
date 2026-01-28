@@ -5,14 +5,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout
   title="Contato | GM Eletricista"
   description="Fale com a equipe GM Eletricista para orçamentos, emergências ou dúvidas técnicas."
+  currentPath={Astro.url.pathname}
 >
   <section class="page-hero">
     <div class="container">
       <p class="section-eyebrow">Contato</p>
       <h1>Vamos conversar sobre o seu projeto</h1>
-      <p>
-        Entre agora em contato, e vamos fazer um orçamento sem compromisso!
-      </p>
+      <p>Entre agora em contato, e vamos fazer um orçamento sem compromisso!</p>
     </div>
   </section>
 
@@ -22,7 +21,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <ul class="contact-list">
           <li><strong>WhatsApp:</strong> (13) 99699-9930</li>
           <li><strong>E-mail:</strong> guilherme.eletricista013@gmail.com</li>
-          <li><strong>Endereço:</strong> Rua José de Assis, 60 - Vila Erminda, Peruíbe - SP</li>
+          <li>
+            <strong>Endereço:</strong> Rua José de Assis, 60 - Vila Erminda, Peruíbe
+            - SP
+          </li>
           <li><strong>Região atendida:</strong> De Praia Grande até Itariri</li>
           <li><strong>Horário:</strong> Segunda a sábado, 8h às 20h</li>
         </ul>
